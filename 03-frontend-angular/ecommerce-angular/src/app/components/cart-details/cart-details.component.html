@@ -1,0 +1,85 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <div *ngIf="cartItems.length > 0">
+                <h4>Cart Details:</h4>
+                <table class="table table-bordered table-hover">
+
+                    <tr>
+                        <th style="background-color: black;" width="20%">Product Image</th>
+                        <th style="background-color: black;" width="50%">Product Details</th>
+                        <th style="background-color: black;" width="30%"></th>
+                    </tr>
+
+                    <tr *ngFor="let item of cartItems">
+                        <td>
+                            <img src="{{item.imageUrl}}" class="img-responsive" width="150px" />
+                        </td>
+
+                        <td>
+                            <p>{{item.name}}</p>
+                            <p>{{item.unitPrice | currency: 'USD'}}</p>
+
+                        </td>
+
+                        <td>
+                            <div class="items">
+                                <label>Quantity:</label>
+                                <div class="row no-gutters">
+                                    <div class="col">
+                                        <button (click)="incrementQuantity(item)" class="btn btn-sm btn-dark">
+                                            <i class="fas fa-plus" aria-hidden="true"
+                                                style="color:white; font-size: 0.9em;"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col ml-4 r-2">
+                                        {{item.quantity}}
+                                    </div>
+                                    <div class="col">
+                                        <button (click)="decrementQuantity(item)" class="btn btn-sm btn-dark">
+                                            <i class="fas fa-minus" aria-hidden="true"
+                                                style="color:white; font-size: 0.9em;"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-8"></div>
+                                </div>
+                            </div>
+                            <div style="color: red;">
+                                <button (click)="removeItem(item)" type="button"
+                                    class="btn btn-sm btn-danger mt-2">Remove</button>
+                            </div>
+
+                            <p class="mt-2">Subtotal: {{item.quantity * item.unitPrice | currency: 'USD'}}</p>
+                        </td>
+                    </tr>
+
+                    <tr style="background-color:whitesmoke;">
+                        <td colspan="1"></td>
+                        <td></td>
+                        <p class="mt-4"><b>Total Quantity: {{totalQuantity}}</b></p>
+                        <p><b>Shipping: FREE</b></p>
+                        <p><b>Total Price: {{totalPrice | currency: 'USD'}}</b></p>
+                        <a routerLink="/checkout" style="margin-left: 10px;" class="btn btn-dark mt-2 mb-3">Checkout</a>
+                    </tr>
+
+                </table>
+            </div>
+
+            <!-- if cart is empty then display image-->
+            <div style="text-align: center;">
+                <div style="text-align: center;" *ngIf="cartItems.length == 0" class="alert alert-primary col-md-12"
+                    role="alert">No items
+                    in your cart yet !
+                </div>
+                <div style="text-align: center;" *ngIf="cartItems.length == 0">
+                    <img src="assets/images/logo.png" class="img-responsive" height="150" width="150"
+                        style="margin-top: 100px; margin-bottom: 10px;">
+                </div>
+                <div style="text-align: center; margin-top: 40px; margin-left: 30px;">
+                    <a routerLink="/products" class="btn btn-secondary btn-sm">Back to Product List</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
