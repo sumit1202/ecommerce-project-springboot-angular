@@ -228,7 +228,7 @@ export class CheckoutComponent implements OnInit {
       //? bug fix gor states not populating in billing address upon copy checked
       this.billingAddressStates = this.shippingAddressStates;
     } else {
-      //? if uncheched mark reset
+      //? if unchecked mark reset
       this.checkoutFormGroup.controls['billingAddress'].reset();
       this.billingAddressStates = [];
     }
@@ -305,6 +305,7 @@ export class CheckoutComponent implements OnInit {
 
     //! console logging
     console.log('\nHandling logs for the form submit button:\n');
+
     console.log(`\nCustomer Info:`);
     console.log(this.checkoutFormGroup.get('customer')?.value);
     console.log(
@@ -357,7 +358,7 @@ export class CheckoutComponent implements OnInit {
         this.billingAddressStates = data;
       }
 
-      //? select first state as deafult in state dropdown
+      //? select first state as default in state dropdown
       subFormGroup!.get('state')!.setValue(data[0]);
     });
   }
