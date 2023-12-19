@@ -12,7 +12,7 @@ export class CartService {
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
 
-  //?web Storage api - 2 types: web session storage and local storage
+  //? web Storage api - 2 types: web session storage and local storage
   //? session storage - data lost once tab/browser closed
   //? local storage - data lost only when user clears browser cache
   //? reference to web browser's session storage
@@ -25,7 +25,7 @@ export class CartService {
 
     if (data != null) {
       this.cartItems = data;
-      //? cpmpute total for data read from web browser's session storage
+      //? compute total for data read from web browser's session storage
       this.computeCartTotals();
     }
   }
