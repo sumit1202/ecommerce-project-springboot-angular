@@ -1,11 +1,11 @@
-<div class="main-content" page-m>
-    <div class="section-content section-content-p30">
-        <div class="container-fluid">
+<div class="main-content " page-m>
+    <div class="section-content section-content-p30 ">
+        <div class="container-fluid ">
             <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
 
                 <!--//! 'customer' form group - start-->
-                <div formGroupName="customer" class="form-area" style="border-color: gray;">
-                    <h3>Customer</h3>
+                <div formGroupName="customer" class="form-area bg-light" style="border-color: black;">
+                    <h3 class="bg-light">Customer</h3>
 
                     <div class="row">
                         <div class="col-md-2" style="margin-top: 10px;"><label>First Name:</label></div>
@@ -70,8 +70,8 @@
                 <!-- 'customer' form group - end -->
 
                 <!--//! 'shippingAddress' form group - start-->
-                <div formGroupName="shippingAddress" class="form-area" style="border-color: gray;">
-                    <h3>Shipping Address</h3>
+                <div formGroupName="shippingAddress" class="form-area bg-light" style="border-color: black;">
+                    <h3 class="bg-light">Shipping Address</h3>
 
                     <div class="row">
                         <div class="col-md-2" style="margin-top: 10px;"><label>Country:</label></div>
@@ -188,8 +188,8 @@
                 </div>
 
                 <!-- //! 'billingAddress' form group - start-->
-                <div formGroupName="billingAddress" class="form-area" style="border-color: gray;">
-                    <h3>Billing Address</h3>
+                <div formGroupName="billingAddress" class="form-area bg-light" style="border-color: black;">
+                    <h3 class="bg-light">Billing Address</h3>
 
                     <div class="row">
                         <div class="col-md-2" style="margin-top: 10px;"><label>Country:</label></div>
@@ -298,8 +298,8 @@
                 <!-- 'billingAddress' form group - end -->
 
                 <!--//! 'creditCard' form group - start-->
-                <div formGroupName="creditCard" class="form-area" style="border-color: gray;">
-                    <h3>Credit Card</h3>
+                <div formGroupName="creditCard" class="form-area bg-light" style="border-color: black;">
+                    <h3 class="bg-light">Credit Card</h3>
 
                     <div class="row">
                         <div class="col-md-2" style="margin-top: 10px;"><label>Card Type:</label></div>
@@ -421,8 +421,8 @@
                 <!-- 'creditCard' form group - end -->
 
                 <!--//! review order details -->
-                <div class="form-area" style="border-color: black;">
-                    <h3>Review Your Order</h3>
+                <div class="form-area bg-light" style="border-color: black;">
+                    <h3 class="bg-light">Review Your Order</h3>
                     <p><b>Total Quantity: {{totalQuantity}}</b></p>
                     <p><b>Shipping: FREE</b></p>
                     <p><b>Total Price: {{totalPrice | currency: 'USD'}}</b></p>

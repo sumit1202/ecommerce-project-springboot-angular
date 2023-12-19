@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import com.example.ecommerce.entity.Country;
+import com.example.ecommerce.entity.Order;
 import com.example.ecommerce.entity.Product;
 import com.example.ecommerce.entity.ProductCategory;
 import com.example.ecommerce.entity.State;
@@ -22,9 +24,12 @@ import jakarta.persistence.metamodel.EntityType;
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
+    @Value("${allowed.origins}")
+    private String[] theAllowedOrigins;
+
     private EntityManager entityManager;
 
-    // @Autowired //? optional to use annotation here
+    @Autowired // ? optional to use annotation here
     public MyDataRestConfig(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
@@ -34,22 +39,32 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         // ! Disabling POST, PUT, DELETE HTTP methods
         // ? This is to expose read-only REST apis
-        HttpMethod[] unsupportedHttpActions = { HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE };
+        HttpMethod[] unsupportedHttpActions = { HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE, HttpMethod.PATCH };
 
-        // ?? For 'Product' Entity
+        // ?? For 'Product' Repository
         disableHttpMethods(config, unsupportedHttpActions, Product.class);
 
-        // ?? For 'ProductCategory' Entity
+        // ?? For 'ProductCategory' Repository
         disableHttpMethods(config, unsupportedHttpActions, ProductCategory.class);
 
-        // ?? For 'Country' Entity
+        // ?? For 'Country' Repository
         disableHttpMethods(config, unsupportedHttpActions, Country.class);
 
-        // ?? For 'State' Entity
+        // ?? For 'State' Repository
         disableHttpMethods(config, unsupportedHttpActions, State.class);
+
+        // ?? For 'Order' Repository
+        disableHttpMethods(config, unsupportedHttpActions, Order.class);
 
         // ! exposing category 'id' in response for "product-category" rest url
         exposeIds(config);
+
+        // ? configure cors mapping
+        // ? now @crossOrigin annotation can be remove in dao
+        // cors.addMapping("/api/**").allowedOrigins("http://localhost:4200");
+
+        // ? instead of hard-coding making use of app.properties
+        cors.addMapping(config.getBasePath() + "/**").allowedOrigins(theAllowedOrigins);
     }
 
     private void disableHttpMethods(RepositoryRestConfiguration config, HttpMethod[] unsupportedHttpActions,

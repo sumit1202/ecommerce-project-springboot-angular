@@ -4,5 +4,6 @@
         "oadx",
         "oidc",
         "Qytf"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
 }

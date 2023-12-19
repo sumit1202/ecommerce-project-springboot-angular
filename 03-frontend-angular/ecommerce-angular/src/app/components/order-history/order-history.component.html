@@ -1,0 +1,42 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <div *ngIf="orderHistoryList.length > 0">
+                <h4>Your Orders:</h4>
+                <table class="table table-bordered table-hover table-stripped" >
+
+                    <tr>
+                        <th style="background-color: black;" width="20%">Order Tracking Number</th>
+                        <th style="background-color: black;" width="10%">Total Price</th>
+                        <th style="background-color: black;" width="10%">Total Quantity</th>
+                        <th style="background-color: black;" width="10%">Date</th>
+                    </tr>
+
+                    <tr *ngFor="let item of orderHistoryList">
+                        <td style="padding: 10px;">{{item.orderTrackingNumber}}</td>
+                        <td style="padding: 10px;">{{item.totalPrice | currency: 'USD'}}</td>
+                        <td style="padding: 10px;">{{item.totalQuantity}}</td>
+                        <td style="padding: 10px;">{{item.dateCreated | date: 'medium'}}</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <!-- if order history is empty then display image-->
+            <div style="text-align: center;">
+                <div style="text-align: center;" *ngIf="orderHistoryList.length == 0"
+                    class="alert alert-secondary col-md-12" role="alert">No
+                    orders yet !
+                </div>
+                <div style="text-align: center;" *ngIf="orderHistoryList.length == 0">
+                    <img src="assets/images/logo.png" class="img-responsive" height="150" width="150"
+                        style="margin-top: 100px; margin-bottom: 10px;">
+                </div>
+                <div style="text-align: center; margin-top: 40px; margin-left: 30px;">
+                    <a routerLink="/products" class="btn btn-secondary btn-sm">Back to Product List</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

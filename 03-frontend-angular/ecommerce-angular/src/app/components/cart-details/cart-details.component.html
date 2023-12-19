@@ -53,10 +53,10 @@
                         </td>
                     </tr>
 
-                    <tr style="background-color:whitesmoke;">
+                    <tr>
                         <td colspan="1"></td>
                         <td></td>
-                        <p class="mt-4"><b>Total Quantity: {{totalQuantity}}</b></p>
+                        <p class="mt-4 "><b>Total Quantity: {{totalQuantity}}</b></p>
                         <p><b>Shipping: FREE</b></p>
                         <p><b>Total Price: {{totalPrice | currency: 'USD'}}</b></p>
                         <a routerLink="/checkout" style="margin-left: 10px;" class="btn btn-dark mt-2 mb-3">Checkout</a>
@@ -67,7 +67,7 @@
 
             <!-- if cart is empty then display image-->
             <div style="text-align: center;">
-                <div style="text-align: center;" *ngIf="cartItems.length == 0" class="alert alert-primary col-md-12"
+                <div style="text-align: center;" *ngIf="cartItems.length == 0" class="alert alert-secondary col-md-12"
                     role="alert">No items
                     in your cart yet !
                 </div>

@@ -9,8 +9,6 @@ import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
-  standalone: true,
-  imports: [CommonModule, RouterLink, NgbModule],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })

@@ -6,8 +6,6 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart-details',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
   templateUrl: './cart-details.component.html',
   styleUrl: './cart-details.component.css',
 })

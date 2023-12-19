@@ -1,8 +1,8 @@
 # My E-Commerce Shop
 
-This Full-Stack project was developed using Angular as Frontend and Spring Boot as Backend.
+This Full-Stack project was developed using Angular as Frontend, Spring Boot as Backend and MySQL as Database.
 
-![App Snap](<Screenshot 2023-12-16 at 12.10.43 PM.png>)
+![App Screenshot](<Screenshot 2023-12-16 at 12.10.43 PM.png>)
 
 ## Features
 
@@ -16,7 +16,7 @@ This Full-Stack project was developed using Angular as Frontend and Spring Boot 
 - Remove product from your cart
 - Cart checkout
 - Checkout form with validation
-- Purchase
+- Purchase - save order details to database
 
 ## Development server
 

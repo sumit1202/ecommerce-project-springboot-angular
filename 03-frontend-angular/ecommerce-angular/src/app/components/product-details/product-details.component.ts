@@ -8,8 +8,6 @@ import { CartItem } from '../../common/cart-item';
 
 @Component({
   selector: 'app-product-details',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css',
 })
