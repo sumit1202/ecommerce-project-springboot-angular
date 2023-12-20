@@ -1,8 +1,8 @@
 # My E-Commerce Shop
 
-This Full-Stack project was developed using Angular as Frontend, Spring Boot as Backend and MySQL as Database.
+A Full-Stack E-Commerce Project developed using Angular as Frontend, Spring Boot as Backend, and MySQL as Database.
 
-![App Screenshot](<Screenshot 2023-12-16 at 12.10.43 PM.png>)
+![Alt text](app-sreenshot.png)
 
 ## Features
 
@@ -17,6 +17,11 @@ This Full-Stack project was developed using Angular as Frontend, Spring Boot as 
 - Cart checkout
 - Checkout form with validation
 - Purchase - save order details to database
+- Orders history
+- Login/Logout - Secured Authentication and Authorization via Okta-OIDC-Oauth2
+- Protected 'Member' page, only for logged in users
+- Secured Rest API endpoints with Okta-jwt
+- HTTPS enabled for backend and frontend
 
 ## Development server
 
@@ -26,7 +31,7 @@ Frontend Dev Server:
 
 ```
 > cd 03-frontend-angular/ecommerce-angular
-> ng serve
+> npm start
 ```
 
 Backend Dev Server:
