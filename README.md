@@ -27,7 +27,7 @@ A Full-Stack E-Commerce Project developed using Angular as Frontend, Spring Boot
 
 Frontend Dev Server:
 
-- In terminal change directory to `03-frontend-angular/ecommerce-angular`. Run `ng serve` for a frontend dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- In terminal change directory to `03-frontend-angular/ecommerce-angular`. Run `npm start` for a frontend dev server. Navigate to `https://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ```
 > cd 03-frontend-angular/ecommerce-angular
@@ -38,7 +38,7 @@ Backend Dev Server:
 
 - Run required MySQL Scripts to setup database.
 
-- In another terminal change directory to `02-backend-springboot/ecommerce`. Run `./mvnw spring-boot:run` for a backend dev server. Navigate to `http://localhost:8080/api`. The application will automatically reload if you change any of the source files.
+- In another terminal change directory to `02-backend-springboot/ecommerce`. Run `./mvnw spring-boot:run` for a backend dev server. Navigate to `https://localhost:8443/api`. The application will automatically reload if you change any of the source files.
 
 ```
 > cd 02-backend-springboot/ecommerce
